@@ -2,11 +2,23 @@ import images from "./gallery-items.js";
 
 
 
-const paletteContainer = document.querySelector('.js-gallery');
+const galleryContainer = document.querySelector('.js-gallery');
 const cardsGallery = containerGallery(images);
+galleryContainer.insertAdjacentHTML('beforeend', cardsGallery);
 
-paletteContainer.insertAdjacentHTML('beforeend', cardsGallery);
+ const openModalImage = document.querySelector('.js-lightbox');
+const modalImage = document.querySelector('.lightbox__image');
+const boxOverlay = document.querySelector('.lightbox__overlay');
 
+const modalCloseBtn = document.querySelector('button[data-action="close-lightbox"]');
+ 
+galleryContainer.addEventListener('click', openModal);
+// modalCloseBtn.addEventListener('click', cloceModal);
+// modalImage.addEventListener('click', image);
+// boxOverlay.addEventListener('click', overlay);
+
+
+// функция создания всей разметки
 function containerGallery(gallery) {
   return gallery.map(({ original, preview, descriptiony }) => {
     return`<li class="gallery__item">
@@ -27,6 +39,14 @@ function containerGallery(gallery) {
 
 }
 
+function openModal(evt) {
+  evt.preventDefault()
+  if (!evt.target.classList.contains('gallery__image')) {
+    return
+  }
+  openModalImage.classList.add('is-open');
+  modalImage.src = evt.target.dataset.source
+}
 
 
 
