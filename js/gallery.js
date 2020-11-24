@@ -8,13 +8,13 @@ galleryContainer.insertAdjacentHTML('beforeend', cardsGallery);
 
  const openModalImage = document.querySelector('.js-lightbox');
 const modalImage = document.querySelector('.lightbox__image');
-const boxOverlay = document.querySelector('.lightbox__overlay');
+// const boxOverlay = document.querySelector('.lightbox__overlay');
 
 const modalCloseBtn = document.querySelector('button[data-action="close-lightbox"]');
  
 galleryContainer.addEventListener('click', openModal);
-// modalCloseBtn.addEventListener('click', cloceModal);
-// modalImage.addEventListener('click', image);
+ modalCloseBtn.addEventListener('click', cloceModal);
+//  modalImage.addEventListener('click', images);
 // boxOverlay.addEventListener('click', overlay);
 
 
@@ -39,6 +39,7 @@ function containerGallery(gallery) {
 
 }
 
+// функция для открытия модал
 function openModal(evt) {
   evt.preventDefault()
   if (!evt.target.classList.contains('gallery__image')) {
@@ -48,5 +49,12 @@ function openModal(evt) {
   modalImage.src = evt.target.dataset.source
 }
 
+// функция для закрытия модал
+function cloceModal() {
+ 
+   openModalImage.classList.remove('is-open');
+  }
+ 
+ 
 
 
