@@ -14,7 +14,7 @@ const modalCloseBtn = document.querySelector('button[data-action="close-lightbox
  
 galleryContainer.addEventListener('click', openModal);
  modalCloseBtn.addEventListener('click', cloceModal);
-//  modalImage.addEventListener('click', images);
+galleryContainer.addEventListener('click', onBackDropClick);
 // boxOverlay.addEventListener('click', overlay);
 
 
@@ -55,6 +55,10 @@ function cloceModal() {
    openModalImage.classList.remove('is-open');
   }
  
- 
 
+function onBackDropClick(event) {
+  if (event.currentTarget === event.target) {
+    closeModal()
 
+  }
+}
