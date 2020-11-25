@@ -52,7 +52,9 @@ function openModal(evt) {
 // функция для закрытия модал
 function cloceModal() {
  
-   openModalImage.classList.remove('is-open');
+  openModalImage.classList.remove('is-open');
+// Очистка значения атрибута src элемента 
+  lightboxImage.src = '';
   }
  
 
