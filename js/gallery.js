@@ -54,7 +54,7 @@ function cloceModal() {
  
   openModalImage.classList.remove('is-open');
 // Очистка значения атрибута src элемента 
-cloceModal.src = '';
+modalImage.src = '';
   }
  
 
@@ -64,3 +64,6 @@ function onBackDropClick(event) {
 
   }
 }
+
+
+
