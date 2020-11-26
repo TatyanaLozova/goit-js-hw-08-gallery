@@ -54,7 +54,7 @@ function cloceModal() {
  
   openModalImage.classList.remove('is-open');
 // Очистка значения атрибута src элемента 
-  lightboxImage.src = '';
+cloceModal.src = '';
   }
  
 
